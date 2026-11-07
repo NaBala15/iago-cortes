@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDITAR: título da aba do navegador -->
+  <title>Iago Cortes | Barbearia com hora marcada em Itapevi &mdash; SP</title>
+  <!-- EDITAR: descrição que aparece no Google (até 155 caracteres) -->
+  <meta name="description"
+    content="Barbearia do Iago Cortes em Itapevi, SP. Corte, barba, sobrancelha e penteado — somente com hora marcada. Agende pelo WhatsApp.">
+
+  <!-- ======================================================================
+       PRÉVIA DO LINK (WhatsApp, Instagram, Threads)
+
+       É a imagem e o texto que aparecem quando este endereço é colado numa
+       conversa. Sem isto, o link vai pelado e ninguém clica.
+
+       EDITAR AO PUBLICAR: trocar og:url e og:image pelo domínio final e
+       recapturar o preview.jpg da página já com as fotos reais.
+       ====================================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Iago Cortes | Mãos de Ouro — Barbearia em Itapevi">
+  <meta property="og:description"
+    content="Corte, barba e acabamento na navalha. Somente com hora marcada. Agende pelo WhatsApp.">
+  <meta property="og:url" content="https://iagocortes.jeffcompany.com.br/">
+  <meta property="og:image" content="https://iagocortes.jeffcompany.com.br/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#0C0B09">
+  <link rel="icon" href="imagens/logo-128.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Ficha do negócio para o Google. EDITAR telefone e endereço quando os
+       dados definitivos fecharem e quando o Google Meu Negócio estiver no ar. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Iago Cortes — Mãos de Ouro",
+    "description": "Barbearia com atendimento somente por hora marcada em Itapevi, SP.",
+    "image": "https://iagocortes.jeffcompany.com.br/imagens/logo.png",
+    "telephone": "+5511985940622",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Servidão, 149 — COHAB, Setor C",
+      "addressLocality": "Itapevi",
+      "addressRegion": "SP",
+      "postalCode": "06654-605",
+      "addressCountry": "BR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -23.5407775, "longitude": -46.9200114 },
+    "sameAs": [
+      "https://www.instagram.com/iago_zo_vitorioso/",
+      "https://www.threads.com/@iago_zo_vitorioso"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="pular-para-conteudo" href="#inicio">Pular para o conteúdo</a>
+
+  <!-- ======================= FAIXA ROLANTE (TOPO) ===================== -->
+  <div class="faixa-rolante" aria-hidden="true">
+    <div class="faixa-rolante__trilha">
+      <!-- EDITAR: recados curtos que ficam rodando no topo -->
+      <span>Somente com hora marcada</span><span>&#9679;</span>
+      <span>Mãos de Ouro</span><span>&#9679;</span>
+      <span>Itapevi &mdash; SP</span><span>&#9679;</span>
+      <span>Agende pelo WhatsApp</span><span>&#9679;</span>
+      <span>Somente com hora marcada</span><span>&#9679;</span>
+      <span>Mãos de Ouro</span><span>&#9679;</span>
+      <span>Itapevi &mdash; SP</span><span>&#9679;</span>
+      <span>Agende pelo WhatsApp</span><span>&#9679;</span>
+    </div>
+  </div>
+
+  <!-- ============================ CABEÇALHO ============================ -->
+  <header class="cabecalho">
+    <div class="cabecalho__interno">
+      <a class="marca" href="#inicio" aria-label="Iago Cortes — início">
+        <img class="marca__logo" src="imagens/logo-128.png" alt="" width="54" height="63">
+        <span class="marca__nome">
+          <span class="marca__bloco">IAGO</span>
+          <span class="marca__contorno">CORTES</span>
+        </span>
+      </a>
+
+      <button class="menu-botao js-menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal"
+        aria-label="Abrir menu de navegação">
+        <span class="menu-botao__barra" aria-hidden="true"></span>
+        <span class="menu-botao__barra" aria-hidden="true"></span>
+        <span class="menu-botao__barra" aria-hidden="true"></span>
+      </button>
+
+      <nav class="navegacao js-menu" id="menu-principal" aria-label="Menu principal">
+        <ul class="navegacao__lista">
+          <li><a href="#servicos">Tabela</a></li>
+          <li><a href="#agendar">Agendar</a></li>
+          <li><a href="#galeria">Trampo</a></li>
+          <li><a href="#social">Social</a></li>
+          <li><a href="#horarios">Horário</a></li>
+          <li><a href="#local">Onde é</a></li>
+        </ul>
+        <!-- EDITAR: número do WhatsApp no formato https://wa.me/55DDDNUMERO -->
+        <a class="botao botao--ouro"
+          href="https://wa.me/5511985940622?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio."
+          target="_blank" rel="noopener">Agendar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero">
+      <div class="hero__grade">
+        <div class="hero__texto">
+          <span class="tag tag--ouro">Itapevi &middot; São Paulo</span>
+          <!-- EDITAR: nome / chamada principal -->
+          <h1 class="hero__titulo">
+            <span class="hero__linha">IAGO</span>
+            <span class="hero__linha hero__linha--vazada">CORTES</span>
+            <span class="hero__assinatura">Mãos de Ouro</span>
+          </h1>
+          <!-- EDITAR: frase de impacto -->
+          <p class="hero__frase">
+            Corte na régua, barba feita e acabamento na navalha.
+            Atendimento <strong>somente com hora marcada</strong> &mdash; seu horário é seu,
+            sem fila e sem espera na calçada.
+          </p>
+
+          <div class="hero__acoes">
+            <!-- EDITAR: número do WhatsApp -->
+            <a class="botao botao--ouro botao--grande"
+              href="https://wa.me/5511985940622?text=Ol%C3%A1%20Iago%21%20Quero%20agendar%20um%20hor%C3%A1rio."
+              target="_blank" rel="noopener">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 12.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z" />
+              </svg>
+              Agendar no WhatsApp
+            </a>
+            <a class="botao botao--branco botao--grande" href="#servicos">Ver a tabela</a>
+          </div>
+
+          <!-- Quando o Iago confirmar há quanto tempo ele corta, volta um
+               selo "+X anos / na tesoura" como primeiro item desta lista. -->
+          <ul class="hero__selos">
+            <li><strong>50%</strong><span>reserva o horário</span></li>
+            <li><strong>100%</strong><span>hora marcada</span></li>
+            <li><strong>Itapevi</strong><span>COHAB</span></li>
+          </ul>
+        </div>
+
+        <!-- A logo segura o hero enquanto não há fotos reais. Quando o Iago
+             mandar as fotos, troque este bloco pelo exemplo comentado abaixo
+             e coloque a foto em fotos/ (ver instruções no topo do style.css). -->
+        <div class="hero__midia">
+          <div class="hero__emblema">
+            <img src="imagens/logo.webp" alt="Iago Cortes — Mãos de Ouro" width="520" height="603">
+          </div>
+          <!--
+          <div class="foto foto--hero foto-hero-real" role="img" aria-label="Degradê feito pelo Iago">
+            <span class="foto__rotulo">FOTO — degradê fechado</span>
+          </div>
+          -->
+          <span class="hero__adesivo" aria-hidden="true">SÓ COM HORA MARCADA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== SERVIÇOS ============================ -->
+    <section class="secao secao--ouro" id="servicos">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--preta">01 / Tabela</span>
+          <h2>Preço na cara,<br>sem letra miúda</h2>
+          <p class="titulo-secao__apoio titulo-secao__apoio--escuro">
+            Valores de dias comuns. Pagamento confirmado garante o horário.
+          </p>
+        </header>
+
+        <!-- ================================================================
+             PREÇOS REAIS, conforme a tabela que o Iago divulgou (dias comuns).
+             Os TEXTOS de cada card ainda precisam do OK dele: confirmar o que
+             entra em cada serviço (principalmente o que é o "Penteado").
+             ================================================================ -->
+        <div class="cards">
+          <article class="card">
+            <span class="card__numero" aria-hidden="true">01</span>
+            <h3>Corte Normal</h3>
+            <p>O corte na máquina e na tesoura, com acabamento na régua.</p>
+            <span class="card__preco">R$ 35</span>
+          </article>
+
+          <article class="card">
+            <span class="card__numero" aria-hidden="true">02</span>
+            <h3>Corte e Barba</h3>
+            <p>O corte mais a barba feita e contornada, na mesma cadeira.</p>
+            <span class="card__preco">R$ 60</span>
+          </article>
+
+          <article class="card">
+            <span class="card__numero" aria-hidden="true">03</span>
+            <h3>Penteado</h3>
+            <p>Penteado montado e finalizado com produto, do seu jeito.</p>
+            <span class="card__preco">R$ 65</span>
+          </article>
+
+          <article class="card card--destaque">
+            <span class="card__numero" aria-hidden="true">04</span>
+            <h3>Penteado e Barba</h3>
+            <p>O serviço mais completo da tabela: penteado e barba juntos.</p>
+            <span class="card__preco">R$ 85</span>
+            <span class="card__fita">COMPLETO</span>
+          </article>
+
+          <article class="card">
+            <span class="card__numero" aria-hidden="true">05</span>
+            <h3>Sobrancelha</h3>
+            <p>Limpeza e desenho da sobrancelha, na navalha.</p>
+            <span class="card__preco">R$ 15</span>
+          </article>
+
+          <article class="card">
+            <span class="card__numero" aria-hidden="true">06</span>
+            <h3>Bigode</h3>
+            <p>Aparo e contorno do bigode, pra fechar o visual.</p>
+            <span class="card__preco">R$ 10</span>
+          </article>
+        </div>
+
+        <ul class="avisos">
+          <li>
+            <strong>Dias festivos e feriados</strong>
+            os valores dos serviços podem ter alteração.
+          </li>
+          <li>
+            <strong>Pra reservar o horário</strong>
+            o agendamento é confirmado com 50% do valor pago na hora de marcar.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================== AGENDAMENTO ========================== -->
+    <section class="secao" id="agendar">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--ouro">02 / Agendar</span>
+          <h2>Seu horário,<br>no seu nome</h2>
+          <p class="titulo-secao__apoio">
+            Aqui ninguém espera na fila. Você escolhe o dia e a hora, manda pelo
+            WhatsApp e reserva pagando <strong>50% do valor</strong> &mdash; o
+            resto fica pro dia do corte.
+          </p>
+        </header>
+
+        <div class="agendar">
+          <ol class="passos">
+            <li>
+              <strong>Escolhe o serviço</strong>
+              <span>Dá uma olhada na tabela e vê o que você quer fazer.</span>
+            </li>
+            <li>
+              <strong>Preenche e envia</strong>
+              <span>O formulário monta a mensagem pronta e abre o WhatsApp.</span>
+            </li>
+            <li>
+              <strong>Paga 50% e reserva</strong>
+              <span>Metade do valor na hora de marcar &mdash; é isso que segura o seu horário. O resto você paga no
+                dia.</span>
+            </li>
+            <li>
+              <strong>Tá reservado</strong>
+              <span>Eu confirmo na conversa ou ofereço o horário livre mais próximo.</span>
+            </li>
+          </ol>
+
+          <!-- Este formulário NÃO envia nada para servidor nenhum. Ele só monta
+               a mensagem e abre a conversa no WhatsApp do Iago. -->
+          <form class="form-agendar js-form-agendar" novalidate>
+            <h3>Montar meu agendamento</h3>
+
+            <div class="campo">
+              <label for="ag-nome">Seu nome</label>
+              <input type="text" id="ag-nome" name="nome" autocomplete="name" placeholder="Como posso te chamar?"
+                required>
+            </div>
+
+            <div class="campo">
+              <label for="ag-servico">Serviço</label>
+              <select id="ag-servico" name="servico" required>
+                <option value="">Escolha o serviço</option>
+                <option>Corte Normal &mdash; R$ 35</option>
+                <option>Corte e Barba &mdash; R$ 60</option>
+                <option>Penteado &mdash; R$ 65</option>
+                <option>Penteado e Barba &mdash; R$ 85</option>
+                <option>Sobrancelha &mdash; R$ 15</option>
+                <option>Bigode &mdash; R$ 10</option>
+                <option>Outro (explico no zap)</option>
+              </select>
+            </div>
+
+            <div class="campo-duplo">
+              <div class="campo">
+                <label for="ag-dia">Dia</label>
+                <input type="date" id="ag-dia" name="dia" required>
+              </div>
+              <div class="campo">
+                <label for="ag-hora">Horário</label>
+                <input type="time" id="ag-hora" name="hora" step="900" required>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="ag-obs">Observação <span class="campo__opcional">(opcional)</span></label>
+              <input type="text" id="ag-obs" name="obs" placeholder="Ex.: levo meu filho junto">
+            </div>
+
+            <p class="form-agendar__erro js-form-erro" role="alert" hidden></p>
+
+            <button class="botao botao--whats botao--grande" type="submit">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 12.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z" />
+              </svg>
+              Enviar pedido no WhatsApp
+            </button>
+
+            <p class="form-agendar__nota">
+              O horário fica reservado com <strong>50% do valor</strong> pago na hora
+              de marcar. Antes disso ele continua livre pra outra pessoa.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ GALERIA ============================ -->
+    <section class="secao" id="galeria">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--ouro">03 / Trampo</span>
+          <h2>O que sai daqui</h2>
+        </header>
+
+        <!-- Fotos reais do trabalho do Iago. Pra trocar qualquer uma: salve a
+             nova em fotos/ com a mesma proporção (3 x 4, em pé) e mude o src e
+             o alt. Pra acrescentar outra, copie uma linha <img> inteira. -->
+        <div class="galeria">
+          <img class="foto-real foto-galeria" src="fotos/trampo-1.jpg"
+               width="900" height="1200" loading="lazy" decoding="async"
+               alt="Degradê alto com risco e topete penteado de lado">
+          <img class="foto-real foto-galeria" src="fotos/trampo-2.jpg"
+               width="507" height="675" loading="lazy" decoding="async"
+               alt="Desenho feito na navalha na cabeça raspada do cliente">
+          <img class="foto-real foto-galeria" src="fotos/trampo-3.jpg"
+               width="900" height="1200" loading="lazy" decoding="async"
+               alt="Topete com risco marcado e degradê nas laterais">
+          <img class="foto-real foto-galeria" src="fotos/trampo-4.jpg"
+               width="900" height="1200" loading="lazy" decoding="async"
+               alt="Corte baixo com degradê fechando na nuca">
+          <img class="foto-real foto-galeria" src="fotos/trampo-5.jpg"
+               width="900" height="1200" loading="lazy" decoding="async"
+               alt="Corte quadrado com risco lateral e degradê">
+          <img class="foto-real foto-galeria" src="fotos/trampo-6.jpg"
+               width="900" height="1200" loading="lazy" decoding="async"
+               alt="Risco fundo na lateral com cabelo penteado e degradê alto">
+        </div>
+
+        <p class="aviso-preco aviso-preco--ouro">
+          Tem muito mais no Instagram &mdash;
+          <a href="https://www.instagram.com/iago_zo_vitorioso/" target="_blank" rel="noopener">@iago_zo_vitorioso</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================== TRABALHO SOCIAL ======================== -->
+    <section class="secao secao--social" id="social">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--ouro">04 / Projeto social</span>
+          <h2>Mãos de ouro<br>também fora da cadeira</h2>
+          <p class="titulo-secao__apoio">
+            Além da barbearia, eu levo a tesoura pra onde o corte não chega: ação
+            na rua, abrigo, igreja e projeto de bairro. Corte feito de graça pra
+            quem precisa sair de cabeça erguida.
+          </p>
+        </header>
+
+        <div class="social">
+          <div class="social__midia">
+            <!-- Fotos reais das ações do Iago. Pra trocar, salve a nova em
+                 fotos/ e mude só o src, o alt e o width/height. -->
+            <img class="foto-real" src="fotos/social-corte.jpg"
+                 width="1000" height="1333" loading="lazy" decoding="async"
+                 alt="Iago cortando o cabelo de um menino durante uma ação social">
+
+            <!-- Vídeo do Instagram embutido pelo endereço oficial de embed.
+                 PRA TROCAR O VÍDEO: troque o código DesgLHXIBP3 nos DOIS links
+                 abaixo pelo código do novo reel (é o pedaço depois de /reel/). -->
+            <figure class="reel">
+              <!-- este aviso fica ATRÁS do vídeo: só aparece se o Instagram
+                   não carregar (internet ruim, bloqueio, vídeo apagado) -->
+              <!-- a "janela" corta o rodapé do Instagram (curtidas e caixa de
+                   comentário): o iframe é mais alto do que ela e o resto fica
+                   escondido. Pra mostrar tudo de novo, é só tirar o overflow
+                   da .reel__janela no CSS. -->
+              <div class="reel__janela">
+                <p class="reel__espera">
+                  Carregando o vídeo do Instagram&hellip;
+                </p>
+                <iframe src="https://www.instagram.com/reel/DesgLHXIBP3/embed/"
+                        title="Vídeo do projeto social do Iago no Instagram"
+                        loading="lazy" scrolling="no" allowfullscreen></iframe>
+              </div>
+              <figcaption>
+                Vídeo não abriu?
+                <a href="https://www.instagram.com/reel/DesgLHXIBP3/" target="_blank" rel="noopener">Ver no Instagram</a>
+              </figcaption>
+            </figure>
+
+            <!-- as duas fotos da mesma ação ficam juntas, uma em cima da outra -->
+            <div class="social__dupla">
+              <img class="foto-real" src="fotos/social-sacola.jpg"
+                   width="1400" height="788" loading="lazy" decoding="async"
+                   alt="Iago na laje entregando uma sacola para a criançada que espera embaixo">
+              <img class="foto-real" src="fotos/social-acao.jpg"
+                   width="1400" height="788" loading="lazy" decoding="async"
+                   alt="Iago na laje, com a criançada reunida na rua embaixo durante uma ação do projeto">
+            </div>
+          </div>
+
+          <div class="social__texto">
+            <!-- EDITAR: contar as ações que o Iago já fez, com data e lugar -->
+            <h3>Como funciona</h3>
+            <p>
+              De tempos em tempos eu fecho uma data e atendo de graça em ação
+              social. Cadeira, máquina e produto por minha conta &mdash; o que eu
+              preciso é de lugar, de gente pra divulgar e, quando dá, de outros
+              barbeiros do lado.
+            </p>
+
+            <ul class="social__blocos">
+              <li>
+                <strong>Precisa de corte?</strong>
+                <span>Se você ou alguém que você conhece não tem condição agora,
+                  me chama. Dou um jeito, sem constrangimento nenhum.</span>
+              </li>
+              <li>
+                <strong>Quer ser voluntário?</strong>
+                <span>Barbeiro, fotógrafo ou quem quiser ajudar a organizar: tem
+                  lugar na próxima ação.</span>
+              </li>
+              <li>
+                <strong>Quer levar a ação pro seu projeto?</strong>
+                <span>Igreja, escola, ONG ou associação de bairro &mdash; manda
+                  mensagem que a gente marca.</span>
+              </li>
+            </ul>
+
+            <!-- EDITAR: número do WhatsApp -->
+            <a class="botao botao--ouro botao--grande"
+              href="https://wa.me/5511985940622?text=Ol%C3%A1%20Iago%21%20Quero%20falar%20sobre%20o%20trabalho%20volunt%C3%A1rio."
+              target="_blank" rel="noopener">
+              Falar sobre o projeto social
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= SOBRE ============================= -->
+    <section class="secao secao--clara" id="sobre">
+      <div class="container sobre">
+        <div class="sobre__texto">
+          <span class="tag tag--preta">05 / A Casa</span>
+          <!-- EDITAR: história real do Iago (ano que começou, como começou) -->
+          <h2>Uma cadeira,<br>uma régua e muito<br>trabalho</h2>
+          <p>
+            Eu sou o Iago. Comecei cortando cabelo de amigo em casa e fui
+            aprendendo na prática, errando e refazendo até o degradê fechar do
+            jeito que eu queria ver no espelho.
+          </p>
+          <p>
+            Hoje atendo em Itapevi com hora marcada, um cliente por vez, no meu
+            ritmo e no ritmo de quem senta na cadeira. É por isso que ninguém
+            sai daqui com pressa nem com corte pela metade.
+          </p>
+
+          <!-- EDITAR: diferenciais -->
+          <ol class="lista-numerada">
+            <li><strong>Hora marcada de verdade</strong> &mdash; um cliente por horário, sem fila na porta.</li>
+            <li><strong>Preço fechado</strong> &mdash; o valor da tabela é o valor que você paga.</li>
+            <li><strong>Material esterilizado</strong> &mdash; lâmina nova por cliente, sempre.</li>
+            <li><strong>Acabamento na régua</strong> &mdash; só te libero quando o corte está fechado.</li>
+          </ol>
+        </div>
+
+        <div class="sobre__midia">
+          <!-- foto do Iago trabalhando. Pra trocar: salve a nova em fotos/
+               em pé (proporção 3 x 4) e mude o src e o alt. -->
+          <img class="foto-real foto-iago" src="fotos/iago.jpg"
+               width="900" height="1193" loading="lazy" decoding="async"
+               alt="Iago cortando o cabelo de um cliente, acabamento na navalha">
+          <div class="sobre__caixa">
+            <!-- EDITAR: ano em que começou -->
+            <strong>Itapevi</strong>
+            <span>COHAB &mdash; Setor C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== HORÁRIOS ============================ -->
+    <section class="secao secao--clara" id="horarios">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--preta">06 / Horário</span>
+          <h2>Quando dá<br>pra marcar</h2>
+        </header>
+
+        <!-- EDITAR: dias e horários reais de atendimento do Iago -->
+        <div class="placar">
+          <div class="placar__item">
+            <span class="placar__dia">SEG</span>
+            <span class="placar__hora">12h &ndash; 18h</span>
+          </div>
+          <div class="placar__item">
+            <span class="placar__dia">TER</span>
+            <span class="placar__hora">10h &ndash; 20h</span>
+          </div>
+          <div class="placar__item">
+            <span class="placar__dia">QUA</span>
+            <span class="placar__hora">10h &ndash; 20h</span>
+          </div>
+          <div class="placar__item">
+            <span class="placar__dia">QUI</span>
+            <span class="placar__hora">10h &ndash; 20h</span>
+          </div>
+          <div class="placar__item">
+            <span class="placar__dia">SEX</span>
+            <span class="placar__hora">10h &ndash; 20h</span>
+          </div>
+          <div class="placar__item placar__item--destaque">
+            <span class="placar__dia">SÁB</span>
+            <span class="placar__hora">10h &ndash; 20h</span>
+          </div>
+          <div class="placar__item">
+            <span class="placar__dia">DOM</span>
+            <span class="placar__hora">FECHADO</span>
+          </div>
+        </div>
+
+        <p class="aviso-preco aviso-preco--escuro">
+          Sábado é o dia que lota primeiro. Marque com alguns dias de antecedência.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================== LOCALIZAÇÃO ========================== -->
+    <section class="secao" id="local">
+      <div class="container">
+        <header class="titulo-secao">
+          <span class="tag tag--ouro">07 / Onde é</span>
+          <h2>Cola aqui</h2>
+        </header>
+
+        <div class="local">
+          <!-- Mapa do endereço real. Quando o Google Meu Negócio estiver no ar,
+               troque a busca pelo nome da barbearia para aparecer o pino dela. -->
+          <div class="mapa">
+            <iframe title="Mapa do endereço do Iago Cortes em Itapevi"
+              src="https://www.google.com/maps?q=R.%20Servid%C3%A3o%2C%20149%20-%20COHAB%20-%20St.%20C%2C%20Itapevi%20-%20SP%2C%2006654-605&output=embed"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="local__dados">
+            <!-- EDITAR: confirmar complemento (casa, fundos, nº da sala) -->
+            <h3>Endereço</h3>
+            <address>
+              R. Servidão, 149<br>
+              COHAB &mdash; Setor C<br>
+              Itapevi &mdash; SP &middot; CEP 06654-605
+            </address>
+
+            <h3>Como chegar</h3>
+            <p>
+              <a href="https://maps.app.goo.gl/Pc3YYxr1qiaqZsq67" target="_blank" rel="noopener">Abrir rota no Google
+                Maps</a>
+            </p>
+
+            <h3>Atendimento</h3>
+            <p>Somente com hora marcada. Chegue uns 5 minutos antes do seu horário.</p>
+
+            <h3>Contato</h3>
+            <ul>
+              <!-- EDITAR: WhatsApp real -->
+              <li><a href="https://wa.me/5511985940622" target="_blank" rel="noopener">(11) 98594-0622 &middot;
+                  WhatsApp</a></li>
+              <li><a href="https://www.instagram.com/iago_zo_vitorioso/" target="_blank" rel="noopener">@iago_zo_vitorioso
+                  &middot; Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= RODAPÉ ============================= -->
+  <footer class="rodape">
+    <div class="rodape__faixa" aria-hidden="true">
+      <div class="faixa-rolante__trilha">
+        <!-- EDITAR: recados do rodapé -->
+        <span>Mãos de Ouro</span><span>&#9679;</span>
+        <span>Iago Cortes</span><span>&#9679;</span>
+        <span>Itapevi &mdash; SP</span><span>&#9679;</span>
+        <span>Mãos de Ouro</span><span>&#9679;</span>
+        <span>Iago Cortes</span><span>&#9679;</span>
+        <span>Itapevi &mdash; SP</span><span>&#9679;</span>
+      </div>
+    </div>
+
+    <div class="container rodape__interno">
+      <div class="rodape__coluna">
+        <img class="rodape__logo" src="imagens/logo-128.png" alt="" width="92" height="107">
+        <p class="rodape__nome">IAGO CORTES</p>
+        <p class="rodape__frase">Barbearia com hora marcada na COHAB, Itapevi &mdash; SP. Mãos de Ouro.</p>
+      </div>
+
+      <div class="rodape__coluna">
+        <h3>Contato</h3>
+        <!-- EDITAR: WhatsApp e e-mail reais -->
+        <ul>
+          <li><a href="https://wa.me/5511985940622" target="_blank" rel="noopener">(11) 98594-0622</a></li>
+          <li><a href="#agendar">Agendar horário</a></li>
+          <li><a href="#social">Projeto social</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h3>Redes</h3>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/iago_zo_vitorioso/" target="_blank" rel="noopener">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 4.86a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.14-3.2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z" />
+              </svg>
+              @iago_zo_vitorioso
+            </a>
+          </li>
+          <li>
+            <a href="https://www.threads.com/@iago_zo_vitorioso" target="_blank" rel="noopener">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12.3 2c3 0 5.2 1 6.5 2.9 1 1.4 1.5 3.3 1.6 5.6h-2.2c-.1-1.8-.5-3.2-1.2-4.2-.9-1.3-2.4-2-4.6-2-2.1 0-3.7.7-4.7 2C6.6 7.6 6.1 9.5 6.1 12s.5 4.4 1.5 5.7c1 1.3 2.6 2 4.7 2 1.9 0 3.3-.5 4.3-1.4.9-.9 1.4-2 1.4-3.3 0-1.1-.3-2-1-2.7-.4-.5-1-.8-1.7-1.1-.1 1.4-.5 2.5-1.1 3.3-.8 1-2 1.5-3.4 1.5-1.1 0-2-.3-2.7-1-.7-.6-1.1-1.5-1.1-2.5 0-1.1.4-2 1.3-2.6.9-.7 2.1-1 3.6-1 .6 0 1.1 0 1.7.1-.1-.7-.3-1.2-.6-1.5-.4-.4-1-.6-1.8-.6-1.1 0-1.9.4-2.4 1.3l-1.8-1.1c.9-1.4 2.3-2.1 4.2-2.1 1.4 0 2.6.4 3.4 1.3.7.7 1.1 1.7 1.3 3 1.3.4 2.3 1 3 1.9.9 1.1 1.3 2.4 1.3 4 0 1.9-.7 3.6-2.1 4.9-1.4 1.3-3.4 2-5.9 2-2.8 0-5-1-6.5-2.9C4.6 17.8 4 15.3 4 12s.6-5.8 1.9-7.5C7.3 2.9 9.5 2 12.3 2Zm-.4 10.9c-1.9 0-2.9.6-2.9 1.6 0 .4.2.8.5 1 .4.3.8.4 1.4.4.8 0 1.4-.3 1.8-.8.4-.5.6-1.2.7-2.1-.5-.1-1-.1-1.5-.1Z" />
+              </svg>
+              Threads
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h3>Horário</h3>
+        <!-- EDITAR: resumo dos horários -->
+        <ul>
+          <li>Seg &middot; 12h &ndash; 18h</li>
+          <li>Ter a sáb &middot; 10h &ndash; 20h</li>
+          <li>Dom &middot; fechado</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rodape__base">
+      <p>&copy; 2026 Iago Cortes &mdash; Mãos de Ouro</p>
+      <p>Página criada e mantida por
+        <a class="rodape__credito" href="https://jeffcompany.com.br" target="_blank" rel="noopener"><strong>Jeff Company</strong></a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== BOTÃO FLUTUANTE WHATSAPP ==================== -->
+  <!-- EDITAR: número do WhatsApp no formato https://wa.me/55DDDNUMERO -->
+  <a class="whatsapp-flutuante"
+    href="https://wa.me/5511985940622?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Iago%20Cortes." target="_blank"
+    rel="noopener" aria-label="Falar com o Iago no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 12.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z" />
+    </svg>
+    <span class="whatsapp-flutuante__texto">Agendar</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

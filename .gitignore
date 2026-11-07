@@ -1,0 +1,22 @@
+# Só o site vai para o repositório. É lista BRANCA: tudo começa de fora e
+# só entra o que estiver listado abaixo. Arquivo novo que precisa ir para o
+# ar tem que ganhar uma linha aqui, senão some sem avisar.
+#
+# Ficam de fora de propósito:
+#   O-QUE-FALTA.md          anotações internas (preços, pendências)
+#   secoes-guardadas.html   seções com dado de exemplo, fora do ar
+/*
+!/.gitignore
+!/.assetsignore
+!/index.html
+!/style.css
+!/script.js
+!/preview.jpg
+!/imagens/
+!/fotos/
+!/src/
+!/wrangler.jsonc
+
+# o arquivo-mestre da logo (1,9 MB) serve para material impresso,
+# o site nao usa
+imagens/logo-alta.png
