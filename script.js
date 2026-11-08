@@ -87,7 +87,7 @@
   var DIAS_FECHADOS = [0, 1];
   var ABRE = 10 * 60;
   var FECHA = 20 * 60;
-  var ANTECEDENCIA = 15;
+  var ANTECEDENCIA = 30;
 
   var NOME_DO_DIA = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
 
