@@ -7,15 +7,12 @@
 #   secoes-guardadas.html   seções com dado de exemplo, fora do ar
 /*
 !/.gitignore
-!/.assetsignore
 !/index.html
 !/style.css
 !/script.js
 !/preview.jpg
 !/imagens/
 !/fotos/
-!/src/
-!/wrangler.jsonc
 
 # o arquivo-mestre da logo (1,9 MB) serve para material impresso,
 # o site nao usa
