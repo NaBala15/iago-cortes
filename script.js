@@ -75,19 +75,78 @@
      Não existe servidor nenhum aqui. O formulário só monta a mensagem
      e abre a conversa no WhatsApp do Iago — quem confirma o horário é
      ele, respondendo na conversa.
+
+     REGRAS DA AGENDA (mudou o horário dele? é só mexer aqui):
+       DIAS_FECHADOS   0 = domingo, 1 = segunda ... 6 = sábado
+       ABRE / FECHA    expediente, em minutos desde a meia-noite
+       ANTECEDENCIA    pra hoje, quanto tempo no mínimo à frente
+
+     Isto não substitui a confirmação dele: serve pra ninguém pedir um
+     horário em dia fechado ou daqui a dois minutos.
      ================================================================ */
+  var DIAS_FECHADOS = [0, 1];
+  var ABRE = 10 * 60;
+  var FECHA = 20 * 60;
+  var ANTECEDENCIA = 15;
+
+  var NOME_DO_DIA = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+
   var formAgendar = document.querySelector('.js-form-agendar');
 
   if (formAgendar) {
     var campoDia = formAgendar.querySelector('#ag-dia');
+    var campoHora = formAgendar.querySelector('#ag-hora');
     var aviso = formAgendar.querySelector('.js-form-erro');
 
-    /* não deixa escolher um dia que já passou */
-    if (campoDia) {
-      var hoje = new Date();
-      var mes = String(hoje.getMonth() + 1).padStart(2, '0');
-      var dia = String(hoje.getDate()).padStart(2, '0');
-      campoDia.min = hoje.getFullYear() + '-' + mes + '-' + dia;
+    /* "2026-11-08" -> objeto Date no fuso de quem está olhando.
+       new Date("2026-11-08") sozinho seria lido como UTC e, no Brasil,
+       voltaria o dia anterior. */
+    function dataLocal(valor) {
+      var p = String(valor).split('-');
+      if (p.length !== 3) { return null; }
+      var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function texto(d) {
+      return d.getFullYear() + '-' +
+        String(d.getMonth() + 1).padStart(2, '0') + '-' +
+        String(d.getDate()).padStart(2, '0');
+    }
+
+    function estaFechado(d) {
+      return DIAS_FECHADOS.indexOf(d.getDay()) !== -1;
+    }
+
+    /* minutos desde a meia-noite, a partir de "14:30" */
+    function emMinutos(hora) {
+      var p = String(hora).split(':');
+      if (p.length < 2) { return null; }
+      return Number(p[0]) * 60 + Number(p[1]);
+    }
+
+    function porExtenso(minutos) {
+      return String(Math.floor(minutos / 60)).padStart(2, '0') + 'h' +
+        (minutos % 60 ? String(minutos % 60).padStart(2, '0') : '');
+    }
+
+    /* O primeiro dia que ele ainda consegue atender: hoje, se estiver
+       aberto e ainda couber um horário; senão o próximo dia de agenda. */
+    function primeiroDiaPossivel() {
+      var d = new Date();
+      var agora = d.getHours() * 60 + d.getMinutes();
+      if (estaFechado(d) || agora + ANTECEDENCIA > FECHA) {
+        d.setDate(d.getDate() + 1);
+        d.setHours(0, 0, 0, 0);
+      }
+      while (estaFechado(d)) { d.setDate(d.getDate() + 1); }
+      return d;
+    }
+
+    if (campoDia) { campoDia.min = texto(primeiroDiaPossivel()); }
+    if (campoHora) {
+      campoHora.min = '10:00';
+      campoHora.max = '20:00';
     }
 
     function mostrarAviso(texto) {
@@ -101,6 +160,55 @@
       aviso.hidden = true;
       aviso.textContent = '';
     }
+
+    /* Devolve o problema do dia + horário escolhidos, ou null se estiver
+       tudo certo. Usado na hora de enviar e também a cada mudança nos
+       campos, pra pessoa descobrir na hora e não depois de clicar. */
+    function problemaNaAgenda(valorData, valorHora) {
+      var d = valorData ? dataLocal(valorData) : null;
+
+      if (d && estaFechado(d)) {
+        return {
+          campo: campoDia,
+          texto: NOME_DO_DIA[d.getDay()].charAt(0).toUpperCase() +
+            NOME_DO_DIA[d.getDay()].slice(1) +
+            ' ele não atende. A agenda é de terça a sábado.'
+        };
+      }
+
+      if (!valorHora) { return null; }
+      var minutos = emMinutos(valorHora);
+      if (minutos === null) { return null; }
+
+      if (minutos < ABRE || minutos > FECHA) {
+        return {
+          campo: campoHora,
+          texto: 'O atendimento é das ' + porExtenso(ABRE) + ' às ' + porExtenso(FECHA) + '.'
+        };
+      }
+
+      if (d) {
+        var agora = new Date();
+        var ehHoje = texto(agora) === valorData;
+        if (ehHoje && minutos < agora.getHours() * 60 + agora.getMinutes() + ANTECEDENCIA) {
+          return {
+            campo: campoHora,
+            texto: 'Pra hoje, escolhe um horário pelo menos ' + ANTECEDENCIA +
+              ' minutos à frente — ele precisa de um tempo pra te responder.'
+          };
+        }
+      }
+
+      return null;
+    }
+
+    function conferirAgora() {
+      var problema = problemaNaAgenda(campoDia ? campoDia.value : '', campoHora ? campoHora.value : '');
+      if (problema) { mostrarAviso(problema.texto); } else { limparAviso(); }
+    }
+
+    if (campoDia) { campoDia.addEventListener('change', conferirAgora); }
+    if (campoHora) { campoHora.addEventListener('change', conferirAgora); }
 
     /* 2026-03-14 -> 14/03/2026 (sem depender do fuso do navegador) */
     function dataPorExtenso(valor) {
@@ -116,13 +224,20 @@
       var nome = formAgendar.querySelector('#ag-nome').value.trim();
       var servico = formAgendar.querySelector('#ag-servico').value;
       var data = campoDia ? campoDia.value : '';
-      var hora = formAgendar.querySelector('#ag-hora').value;
+      var hora = campoHora ? campoHora.value : '';
       var obs = formAgendar.querySelector('#ag-obs').value.trim();
 
       if (!nome)    { mostrarAviso('Escreve seu nome pra eu saber com quem falo.'); formAgendar.querySelector('#ag-nome').focus(); return; }
       if (!servico) { mostrarAviso('Escolhe o serviço que você quer fazer.'); formAgendar.querySelector('#ag-servico').focus(); return; }
       if (!data)    { mostrarAviso('Escolhe o dia do agendamento.'); campoDia.focus(); return; }
-      if (!hora)    { mostrarAviso('Escolhe o horário do agendamento.'); formAgendar.querySelector('#ag-hora').focus(); return; }
+      if (!hora)    { mostrarAviso('Escolhe o horário do agendamento.'); campoHora.focus(); return; }
+
+      var problema = problemaNaAgenda(data, hora);
+      if (problema) {
+        mostrarAviso(problema.texto);
+        if (problema.campo) { problema.campo.focus(); }
+        return;
+      }
 
       var mensagem =
         'Olá Iago! Quero agendar um horário.\n\n' +

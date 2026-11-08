@@ -428,6 +428,9 @@ img { max-width: 100%; height: auto; }
   background: rgba(184,50,42,.14); border-left: 4px solid var(--cor-vermelho);
   color: #F0B9B4; font-size: 15px;
 }
+.campo__dica {
+  margin: -8px 0 4px; font-size: 14px; color: var(--cor-texto-suave);
+}
 .form-agendar__nota {
   margin: 14px 0 0; font-size: 13px; color: var(--cor-texto-suave); text-align: center;
 }
