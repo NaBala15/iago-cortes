@@ -472,7 +472,14 @@ img { max-width: 100%; height: auto; }
   padding: 14px 14px 18px; transition: var(--transicao);
 }
 .certificado:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--cor-ouro-escuro); }
-.certificado .foto { width: 100%; }
+.certificado a { display: block; }
+/* certificado e documento: tem que aparecer inteiro, por isso "contain"
+   em vez de "cover" — o que sobra nas bordas fica no fundo escuro */
+.foto-certificado {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain;
+  background: var(--cor-preto); border: 3px solid var(--cor-preto);
+  margin-bottom: 14px;
+}
 .certificado__dados h3 { font-size: 21px; color: var(--cor-preto); margin-bottom: 4px; }
 .certificado__emissor { font-size: 14px; color: #4A4536; margin: 0; }
 .certificados__chamada {
@@ -689,7 +696,7 @@ img { max-width: 100%; height: auto; }
   .reviews  { grid-template-columns: repeat(3, 1fr); }
   .produtos { grid-template-columns: repeat(4, 1fr); }
   .avisos   { grid-template-columns: repeat(2, 1fr); }
-  .certificados { grid-template-columns: repeat(4, 1fr); }
+  .certificados { grid-template-columns: repeat(3, 1fr); }
   .certificados__chamada { grid-auto-flow: column; justify-items: center; align-items: center; text-align: left; }
   .placar   { grid-template-columns: repeat(7, 1fr); gap: 12px; }
   .agendar  { grid-template-columns: .9fr 1.1fr; gap: 44px; }
