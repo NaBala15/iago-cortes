@@ -35,7 +35,14 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- Ficha do negócio para o Google. EDITAR telefone e endereço quando os
-       dados definitivos fecharem e quando o Google Meu Negócio estiver no ar. -->
+       dados definitivos fecharem e quando o Google Meu Negócio estiver no ar.
+
+       O "potentialAction" é o que diz ao Google que dá para marcar horário
+       nesta página. O mesmo endereço (.../#agendar) vai no campo "link de
+       agendamento" do Google Meu Negócio.
+
+       ATENÇÃO: isto é JSON. Não aceita comentário lá dentro — um // ou um
+       /* */ quebra a ficha inteira e o Google passa a ignorar tudo. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,7 +67,22 @@
     "sameAs": [
       "https://www.instagram.com/iago_zo_vitorioso/",
       "https://www.threads.com/@iago_zo_vitorioso"
-    ]
+    ],
+    "url": "https://iagocortes.jeffcompany.com.br/",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "name": "Agendar hor\u00e1rio",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://iagocortes.jeffcompany.com.br/#agendar",
+        "inLanguage": "pt-BR",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": { "@type": "Reservation", "name": "Hor\u00e1rio na cadeira do Iago" }
+    }
   }
   </script>
 </head>
