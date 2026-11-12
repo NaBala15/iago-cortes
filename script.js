@@ -323,6 +323,71 @@
   var primeiraFoto = document.querySelector('.foto-real');
   if (primeiraFoto) { primeiraFoto.addEventListener('load', ajustarReelDuasVezes); }
 
+  /* ================================================================
+     5) SETAS DO CARROSSEL DE CERTIFICADOS
+
+     A rolagem em si é a do navegador (arrastar no celular, shift+roda
+     no mouse, setas do teclado quando o trilho está focado). Estas
+     duas setas existem para quem usa mouse comum, que não tem rolagem
+     lateral. Sem JavaScript o carrossel continua funcionando — só as
+     setas é que somem.
+
+     Elas andam de card em card, mirando a posição exata do próximo em
+     vez de somar pixels: somar brigava com o encaixe e o carrossel
+     parava no meio do caminho.
+     ================================================================ */
+  var trilho = document.querySelector('.js-carrossel-trilho');
+  var setaAntes = document.querySelector('.js-carrossel-antes');
+  var setaDepois = document.querySelector('.js-carrossel-depois');
+
+  if (trilho && setaAntes && setaDepois) {
+    var FOLGA = 12;   /* o trilho tem respiro nas pontas; isto é a tolerância */
+
+    /* Onde cada card começa, contado dentro do trilho e já descontando o
+       respiro da borda — é esse número que vira destino da rolagem.
+       (O scrollLeft entra SOMANDO: o que a gente vê na tela já está
+       deslocado pelo tanto que o trilho rolou.) */
+    function posicoesDosCards() {
+      var esquerdaDoTrilho = trilho.getBoundingClientRect().left;
+      var respiro = parseInt(getComputedStyle(trilho).paddingLeft, 10) || 0;
+      var lista = [];
+      Array.prototype.forEach.call(trilho.querySelectorAll('.certificado'), function (card) {
+        var dentro = card.getBoundingClientRect().left - esquerdaDoTrilho + trilho.scrollLeft;
+        lista.push(Math.round(dentro - respiro));
+      });
+      return lista;
+    }
+
+    function irPara(destino) {
+      var limite = trilho.scrollWidth - trilho.clientWidth;
+      if (destino < 0) { destino = 0; }
+      if (destino > limite) { destino = limite; }
+      trilho.scrollTo({ left: destino, behavior: 'smooth' });
+    }
+
+    setaDepois.addEventListener('click', function () {
+      var atual = trilho.scrollLeft;
+      var proxima = posicoesDosCards().filter(function (p) { return p > atual + FOLGA; })[0];
+      irPara(proxima === undefined ? trilho.scrollWidth : proxima);
+    });
+
+    setaAntes.addEventListener('click', function () {
+      var atual = trilho.scrollLeft;
+      var anteriores = posicoesDosCards().filter(function (p) { return p < atual - FOLGA; });
+      irPara(anteriores.length ? anteriores[anteriores.length - 1] : 0);
+    });
+
+    function atualizarSetas() {
+      var limite = trilho.scrollWidth - trilho.clientWidth;
+      setaAntes.disabled = trilho.scrollLeft <= FOLGA;
+      setaDepois.disabled = trilho.scrollLeft >= limite - FOLGA;
+    }
+
+    trilho.addEventListener('scroll', atualizarSetas, { passive: true });
+    window.addEventListener('resize', atualizarSetas);
+    atualizarSetas();
+  }
+
   /* ---------- 4) APARIÇÃO AO ROLAR ---------- */
   var alvosAnimados = document.querySelectorAll('.secao, .hero__texto, .hero__midia');
 

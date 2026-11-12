@@ -548,7 +548,20 @@
           </p>
         </header>
 
-        <div class="certificados">
+        <!-- Os certificados correm pro lado em vez de empilhar: são cinco, e
+             empilhados fariam a página crescer sem necessidade. A rolagem é a
+             nativa do navegador (arrastar no celular, shift+roda no mouse);
+             as setas existem pra quem só tem mouse comum. -->
+        <div class="carrossel">
+          <div class="carrossel__topo">
+            <span class="carrossel__dica">Arraste pro lado pra ver todos</span>
+            <div class="carrossel__setas">
+              <button class="carrossel__seta js-carrossel-antes" type="button" aria-label="Ver certificados anteriores">&#8249;</button>
+              <button class="carrossel__seta js-carrossel-depois" type="button" aria-label="Ver próximos certificados">&#8250;</button>
+            </div>
+          </div>
+
+          <div class="certificados js-carrossel-trilho" tabindex="0" role="region" aria-label="Certificados do Iago">
           <article class="certificado">
             <a href="fotos/certificado-premio.jpg" target="_blank" rel="noopener">
               <img class="foto-certificado" src="fotos/certificado-premio.jpg"
@@ -608,6 +621,7 @@
               <p class="certificado__emissor">Indicação por telefone na categoria barbearia e cabeleireiro</p>
             </div>
           </article>
+          </div>
         </div>
 
         <div class="certificados__chamada">

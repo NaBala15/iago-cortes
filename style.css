@@ -464,7 +464,37 @@ img { max-width: 100%; height: auto; }
 .produto .botao { margin-top: auto; width: 100%; font-size: 15px; padding: 12px 16px; }
 
 /* ========================== CERTIFICADOS ========================= */
-.certificados { display: grid; gap: 20px; }
+/* ---- carrossel: os cards correm pro lado, com encaixe ---- */
+.carrossel__topo {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 14px;
+}
+.carrossel__dica { font-size: 14px; color: var(--cor-texto-suave); }
+.carrossel__setas { display: flex; gap: 8px; }
+.carrossel__seta {
+  width: 42px; height: 42px; cursor: pointer;
+  background: transparent; color: var(--cor-ouro-claro);
+  border: var(--borda-ouro); font-size: 24px; line-height: 1;
+  transition: var(--transicao);
+}
+.carrossel__seta:hover { background: var(--metal-ouro); color: var(--cor-preto); }
+.carrossel__seta[disabled] { opacity: .35; cursor: default; }
+.carrossel__seta[disabled]:hover { background: transparent; color: var(--cor-ouro-claro); }
+
+.certificados {
+  display: flex; gap: 20px;
+  overflow-x: auto; scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  /* espaço pra sombra dos cards e pra barra de rolagem não cobrir nada */
+  padding: 6px 6px 18px;
+  scrollbar-color: var(--cor-ouro) var(--cor-grafite);
+  scrollbar-width: thin;
+}
+.certificados:focus-visible { outline: 3px solid var(--cor-ouro-claro); outline-offset: 4px; }
+.certificados::-webkit-scrollbar { height: 10px; }
+.certificados::-webkit-scrollbar-track { background: var(--cor-grafite); }
+.certificados::-webkit-scrollbar-thumb { background: var(--cor-ouro-escuro); }
+.certificado { flex: 0 0 272px; scroll-snap-align: start; }
 .certificado {
   display: flex; flex-direction: column;
   background: var(--cor-clara); color: var(--cor-preto);
@@ -674,6 +704,7 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .aparece { opacity: 1; transform: none; transition: none; }
+  .certificados { scroll-behavior: auto; }
 }
 
 /* ========================== RESPONSIVO =========================== */
@@ -682,7 +713,6 @@ img { max-width: 100%; height: auto; }
   .galeria  { grid-template-columns: repeat(2, 1fr); }
   .reviews  { grid-template-columns: repeat(2, 1fr); }
   .produtos { grid-template-columns: repeat(2, 1fr); }
-  .certificados { grid-template-columns: repeat(2, 1fr); }
   .placar   { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -696,7 +726,7 @@ img { max-width: 100%; height: auto; }
   .reviews  { grid-template-columns: repeat(3, 1fr); }
   .produtos { grid-template-columns: repeat(4, 1fr); }
   .avisos   { grid-template-columns: repeat(2, 1fr); }
-  .certificados { grid-template-columns: repeat(3, 1fr); }
+  .certificado { flex-basis: 330px; }
   .certificados__chamada { grid-auto-flow: column; justify-items: center; align-items: center; text-align: left; }
   .placar   { grid-template-columns: repeat(7, 1fr); gap: 12px; }
   .agendar  { grid-template-columns: .9fr 1.1fr; gap: 44px; }
